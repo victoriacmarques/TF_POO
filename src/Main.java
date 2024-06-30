@@ -1,7 +1,7 @@
-import aplicacao.ACMERobots;
+import aplicacao.*;
 
 public class Main {
     public static void main(String[] args) {
-        new ACMERobots();
+        app app = new app();
     }
 }

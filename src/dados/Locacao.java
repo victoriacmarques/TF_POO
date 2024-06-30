@@ -86,10 +86,6 @@ public class Locacao {
         return true;
     }
 
-    public boolean cadastrarLocacao(Locacao locacao) {
-
-    }
-
     @Override
     public String toString() {
         return "Locacao{" +
