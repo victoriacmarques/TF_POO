@@ -4,11 +4,13 @@ public abstract class Robo {
     private int id;
     private String modelo;
     private double valorDiario;
+    private boolean status;
 
     public Robo(int id, String modelo, double valorDiario) {
         this.id = id;
         this.modelo = modelo;
         this.valorDiario = valorDiario;
+        this.status = true;
     }
 
     // Getters e Setters
@@ -24,8 +26,14 @@ public abstract class Robo {
         return modelo;
     }
 
+    public boolean getStatus() {return status;}
+
     public void setModelo(String modelo) {
         this.modelo = modelo;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 
     public double getValorDiario() {
