@@ -1,8 +1,8 @@
 package dados;
 
-import java.awt.*;
-import java.util.Date;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.TreeSet;
 
 public class Locacao {
     private int numero;
@@ -10,7 +10,7 @@ public class Locacao {
     private Date dataInicio;
     private int dataFim;
     private ArrayList<Robo> robos;
-    private ArrayList<Cliente> clientes;
+    private TreeSet<Cliente> clientes;
 
     public Locacao(int numero, Status situacao, Date dataInicio, int dataFim) {
         this.numero = numero;
@@ -18,7 +18,7 @@ public class Locacao {
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
         robos = new ArrayList<>();
-        clientes = new ArrayList<>();
+        clientes = new TreeSet<>();
     }
 
     public int getNumero() {
@@ -84,6 +84,10 @@ public class Locacao {
             }
         }clientes.add(cliente);
         return true;
+    }
+
+    public TreeSet<Cliente> getClientes() {
+        return clientes;
     }
 
     @Override
