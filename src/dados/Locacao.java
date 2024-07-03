@@ -11,6 +11,7 @@ public class Locacao {
     private int dataFim;
     private ArrayList<Robo> robos;
     private TreeSet<Cliente> clientes;
+    private ArrayList<Locacao> locacoes;
 
     public Locacao(int numero, Status situacao, Date dataInicio, int dataFim) {
         this.numero = numero;
@@ -19,6 +20,7 @@ public class Locacao {
         this.dataFim = dataFim;
         robos = new ArrayList<>();
         clientes = new TreeSet<>();
+        locacoes = new ArrayList<>();
     }
 
     public int getNumero() {
@@ -89,6 +91,23 @@ public class Locacao {
     public TreeSet<Cliente> getClientes() {
         return clientes;
     }
+
+    public ArrayList<Locacao> consultarLocacoes(){
+        ArrayList<Locacao> locacoesConsultadas = new ArrayList<>();
+        if (locacoes.isEmpty()){
+            return null;
+        }else{
+            for (Locacao locacao : locacoes){
+                locacoesConsultadas.add(locacao);
+                if (!locacao.getRobos().isEmpty()){
+                    for (Robo robo : locacao.getRobos()){
+                        robo.toString();
+                    }
+                }
+            }
+        }return locacoesConsultadas;
+    }
+
 
     @Override
     public String toString() {
